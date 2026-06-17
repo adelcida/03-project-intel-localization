@@ -1,0 +1,358 @@
+/* Root colors - Intel brand colors */
+:root {
+  /* Dark navy background like Intel's branding */
+  --dark-bg: #0a1628;
+  --darker-bg: #050d1a;
+  
+  /* Bright blue accent - Intel's signature blue */
+  --intel-blue: #0071c5;
+  --intel-blue-hover: #0056a0;
+  
+  /* Text colors */
+  --text-light: #ffffff;
+  --text-gray: #d1d5db;
+  --text-muted: #9ca3af;
+  
+  /* Card styling */
+  --card-bg: #1a2838;
+  --card-border: #2d4563;
+}
+
+/* General page styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Header / Hero Section */
+header {
+  background: linear-gradient(135deg, var(--darker-bg) 0%, #1a3a52 100%);
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--intel-blue);
+}
+
+header div {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Logo styling */
+header img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* Main heading */
+header h1 {
+  font-size: 48px;
+  margin: 20px 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-light);
+}
+
+/* Subheading */
+header p {
+  font-size: 18px;
+  color: var(--text-gray);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Timeline Cards Section */
+section {
+  /* outer width sized to fit four 300px cards + gaps and padding */
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  width: min(1312px, 100%);
+  margin: 60px auto;
+  padding: 40px 20px 60px;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  background-color: #f8fbff;
+  border-radius: 24px;
+  border: 1px solid #dde8f5;
+  box-shadow: 0 20px 80px rgba(15, 30, 50, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: var(--intel-blue) #c8d9ee;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 15px;
+}
+
+section::-webkit-scrollbar {
+  height: 10px;
+}
+
+section::-webkit-scrollbar-track {
+  background: #c8d9ee;
+  border-radius: 999px;
+}
+
+section::-webkit-scrollbar-thumb {
+  background-color: var(--intel-blue);
+  border-radius: 999px;
+}
+
+/* Individual Card Styling */
+section > div {
+  background-color: #ffffff;
+  border: 1px solid #d9e5f4;
+  border-radius: 20px;
+  padding: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 300px;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 18px 40px rgba(15, 30, 50, 0.08);
+  scroll-snap-align: start;
+}
+
+/* Image placeholder background */
+section > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #eef4fb 0%, #dfe9f7 100%);
+  z-index: 1;
+}
+
+/* Specific card background images */
+.c-founded::before,
+.c-4004::before,
+.c-8086::before,
+.c-386::before,
+.c-ghg::before,
+.c-rise::before,
+.c-zero::before,
+.c-renewable::before,
+.c-sustainability::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.c-founded::before {
+  background-image: linear-gradient(135deg, rgba(238,244,251,0.35) 0%, rgba(223,233,247,0.35) 100%), url('img/intel_founded.jpg');
+}
+
+.c-4004::before {
+  background-image: linear-gradient(135deg, rgba(238,244,251,0.35) 0%, rgba(223,233,247,0.35) 100%), url('img/intel_c4004.jpg');
+}
+
+.c-8086::before {
+  background-image: linear-gradient(135deg, rgba(238,244,251,0.35) 0%, rgba(223,233,247,0.35) 100%), url('img/intel_8086.jpg');
+}
+
+.c-386::before {
+  background-image: linear-gradient(135deg, rgba(238,244,251,0.35) 0%, rgba(223,233,247,0.35) 100%), url('img/intel_386.jpg');
+}
+
+.c-ghg::before {
+  background-image: linear-gradient(135deg, rgba(238,244,251,0.35) 0%, rgba(223,233,247,0.35) 100%), url('img/ghg_down.jpg');
+}
+
+.c-rise::before {
+  background-image: linear-gradient(135deg, rgba(238,244,251,0.35) 0%, rgba(223,233,247,0.35) 100%), url('img/intel_RISE.jpg');
+}
+
+.c-zero::before {
+  background-image: linear-gradient(135deg, rgba(238,244,251,0.35) 0%, rgba(223,233,247,0.35) 100%), url('img/intel_zero.jpg');
+}
+
+.c-renewable::before {
+  background-image: linear-gradient(135deg, rgba(238,244,251,0.35) 0%, rgba(223,233,247,0.35) 100%), url('img/intel_renewable.jpg');
+}
+
+.c-sustainability::before {
+  background-image: linear-gradient(135deg, rgba(238,244,251,0.35) 0%, rgba(223,233,247,0.35) 100%), url('img/intel_sustainability.jpg');
+}
+
+section > div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* Content positioning */
+section > div h3 {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  transform: translateY(-60px);
+  text-align: center;
+  font-size: 20px;
+  color: var(--text-light);
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+section > div p {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  transform: translateY(-20px);
+  text-align: center;
+  max-height: 45%;
+  overflow-y: auto;
+  font-size: 14px;
+  color: var(--text-gray);
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+/* Hover effect for cards */
+section > div:hover {
+  border-color: rgba(0, 113, 197, 0.55);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 48px rgba(15, 30, 50, 0.12);
+}
+
+/* Card year styling */
+section > div h2 {
+  font-size: 42px;
+  color: #0c2d63;
+  margin: 0;
+  font-weight: 700;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 3;
+  transition: opacity 0.3s ease;
+}
+
+/* Overlay background for content */
+section > div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 22, 40, 0.95);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* Show content on hover */
+section > div:hover h3,
+section > div:hover p {
+  opacity: 1;
+}
+
+section > div:hover::after {
+  opacity: 1;
+}
+
+/* Bottom instruction text */
+body > p {
+  text-align: center;
+  color: #4c6276;
+  font-size: 14px;
+  padding: 20px 20px 40px;
+  margin: 0 auto;
+  max-width: 100%;
+  background-color: transparent;
+}
+
+/* Mobile-only instruction (inserted above the timeline) */
+.mobile-instruction {
+  display: none;
+  text-align: center;
+  color: #4c6276;
+  font-size: 14px;
+  padding: 12px 20px;
+  margin: 0 auto 12px;
+  background-color: transparent;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 32px;
+  }
+  
+  header p {
+    font-size: 16px;
+  }
+  
+  section {
+    flex-direction: column;
+    overflow-x: visible;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Show mobile instruction above the timeline and hide bottom copy */
+  .mobile-instruction {
+    display: block;
+  }
+
+  body > p {
+    display: none;
+  }
+  
+  section > div {
+    flex: 1 1 auto;
+    padding: 24px 20px;
+  }
+  
+  section > div h2 {
+    font-size: 28px;
+  }
+}
+
+/* Show the top instruction for any viewport narrower than the
+   four-card layout (keeps the scroll hint visible on tablets and
+   smaller desktops that need horizontal scrolling) */
+@media (max-width: 1312px) {
+  .mobile-instruction {
+    display: block;
+  }
+
+  body > p {
+    display: none;
+  }
+}
